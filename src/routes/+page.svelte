@@ -16,7 +16,7 @@ function fillRow(){
 	}
 }
 	
-fillRows()
+fillRow()
 
 </script>
 
@@ -44,20 +44,41 @@ fillRows()
 	padding: 0px 20px;
 	color: #fff;
 }
+.app .game{
+	width: 100%;
+	height: calc(100% - 50px);
+	background: #fff;
+}
+
+.app .game .row{
+	display: flex;
+	width: 100%;
+	height: calc(100% / 4);
+}
+
+.app .game .row .box {
+	flex: 1;
+	border: 1px solid #555;
+	cursor: pointer;
+}
 
 </style>
 
-<main class="app"
+<link rel="stylesheet" href="../global.css">
+
+<main class="app">
 	<div class="header">
 	<h4> PianoTiles </h4>
 	<p> Score: {score} </p>
 	</div>
-<div class="game">
-{#each rows as row, i}
+	<div class="game">
+    {#each rows as row, i}
 	<div class="row">
 	{#each row as box, j}
 	<div class={"box"+box}>
 	</div>
+	{/each}
 	</div>
-</div>
+	{/each}
+	</div>
 </main>
